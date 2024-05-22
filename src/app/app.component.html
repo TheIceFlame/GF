@@ -1,1 +1,8 @@
-<h1>We are live</h1>
+<div class="container">
+  <img id="main-image" [src]="currentImage" alt="Proposal Image" class="centered">
+  <p class="sentence">Do you wanna be my girlfriend?</p>
+  <div class="buttons">
+    <button id="yes-button" class="button" (click)="onYesClick()">Yes</button>
+    <button id="no-button" class="button" (click)="onNoClick()">{{ noButtonText }}</button>
+  </div>
+</div>
