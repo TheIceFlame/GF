@@ -1,18 +1,41 @@
 import { Component } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  // animations: [
+  //   trigger('overlayAnimation', [
+  //     state('visible', style({
+  //       transform: 'translateY(0%)',
+  //       zIndex: '33'
+  //     })),
+  //     state('hidden', style({
+  //       transform: 'translateY(-100%)',
+  //       zIndex: '0'
+  //     })),
+  //     transition('visible <=> hidden', animate('0.6s ease-in-out'))
+  //   ])
+  // ]
 })
 export class AppComponent {
   title = 'GF';
-  currentImage: string = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1b4aba1b-d2a3-4f69-8a99-891fea3c2e8c/deiflk6-2cae766a-286d-4aae-bc80-dc65bd9faf89.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFiNGFiYTFiLWQyYTMtNGY2OS04YTk5LTg5MWZlYTNjMmU4Y1wvZGVpZmxrNi0yY2FlNzY2YS0yODZkLTRhYWUtYmM4MC1kYzY1YmQ5ZmFmODkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.7BiNoN_9WNPkqmyFD-bbYBGqbvBDMCn_FtBpnS8f32g';
+  currentImage: string = 'GF-GIF.gif';
   noButtonText: string = 'No';
   yesButtonScale: number = 1.0;
+  DidntAcceptYet:boolean = true
+  overlayState: string = 'visible';
+
+
+  // ngOnInit() {
+  //   setTimeout(() => {
+  //     this.overlayState = 'hidden';
+  //   }, 2000);
+  // }
 
   onYesClick() {
-    // Add any functionality for when Yes is clicked, if needed
+    this.DidntAcceptYet = false
   }
 
   onNoClick() {
